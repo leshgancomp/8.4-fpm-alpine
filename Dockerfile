@@ -71,6 +71,8 @@ RUN apk add --no-cache \
 
 COPY --link docker/php/10-app.ini $PHP_INI_DIR/conf.d/
 
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
 WORKDIR /app
 
 # Switch to non-root user
