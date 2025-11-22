@@ -65,7 +65,7 @@ RUN apk add --no-cache \
         libwebp-dev \
         linux-headers \
     && chmod +x /usr/local/bin/install-php-extensions \
-    && install-php-extensions bcmath exif gd gmp intl mysqli pcntl pdo_mysql pdo_pgsql sockets xsl zip redis \
+    && install-php-extensions bcmath exif gd gmp intl mysqli pcntl pdo_mysql pdo_pgsql sockets xsl zip redis amqp \
     && apk del .build-deps \
     && rm -rf /var/cache/apk/*
 
