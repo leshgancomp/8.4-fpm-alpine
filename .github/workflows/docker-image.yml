@@ -12,7 +12,7 @@ on:
     - cron: '0 2 * * 1'
 
 env:
-  IMAGE_NAME: leshgancomp/8.4-fpm-alpine
+  IMAGE_NAME: exploitit/php-8.4-fpm-alpine
   REGISTRY: docker.io
 
 jobs:
