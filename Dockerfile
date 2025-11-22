@@ -69,6 +69,8 @@ RUN apk add --no-cache \
     && apk del .build-deps \
     && rm -rf /var/cache/apk/*
 
+COPY --link docker/php/10-app.ini $PHP_INI_DIR/conf.d/
+
 WORKDIR /app
 
 # Switch to non-root user
