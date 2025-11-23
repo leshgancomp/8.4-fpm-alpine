@@ -70,6 +70,8 @@ RUN chmod +x /usr/local/bin/install-php-extensions &&  \
     apk del .build-deps && \
     rm -rf /var/cache/apk/*
 
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+
 COPY --link docker/php/10-app.ini $PHP_INI_DIR/conf.d/
 COPY --link docker/php/20-app.dev.ini $PHP_INI_DIR/conf.d/
 
