@@ -73,10 +73,10 @@ COPY --link docker/php/10-app.ini $PHP_INI_DIR/conf.d/
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-WORKDIR /app
-
 # Switch to non-root user
 USER symfony
+
+WORKDIR /app
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
