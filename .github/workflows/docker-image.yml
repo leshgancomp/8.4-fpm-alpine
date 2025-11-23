@@ -176,7 +176,7 @@ jobs:
           echo "Testing PHP extensions..."
           docker run --rm --platform ${{ matrix.platform }} \
             ${{ steps.image-ref.outputs.image-ref }} \
-            php -m | grep -E "(bcmath|exif|gd|gmp|intl|mysqli|pcntl|pdo_mysql|pdo_pgsql|redis|sockets|xsl|zip|xdebug)"
+            php -m | grep -E "(bcmath|exif|gd|gmp|intl|mysqli|pcntl|pdo_mysql|pdo_pgsql|redis|sockets|xsl|zip|amqp)"
 
       - name: Test FPM process and configuration
         run: |
