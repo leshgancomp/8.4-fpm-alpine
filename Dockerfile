@@ -63,11 +63,11 @@ RUN apk add --no-cache \
         libpng-dev \
         jpeg-dev \
         libwebp-dev \
-        linux-headers \
-    && chmod +x /usr/local/bin/install-php-extensions \
-    && install-php-extensions bcmath exif gd gmp intl mysqli pcntl pdo_mysql pdo_pgsql sockets xsl zip redis amqp \
-    && apk del .build-deps \
-    && rm -rf /var/cache/apk/*
+        linux-headers
+RUN chmod +x /usr/local/bin/install-php-extensions &&  \
+    install-php-extensions bcmath exif gd gmp intl mysqli pcntl pdo_mysql pdo_pgsql sockets xsl zip redis amqp &&  \
+    apk del .build-deps && \
+    rm -rf /var/cache/apk/*
 
 COPY --link docker/php/10-app.ini $PHP_INI_DIR/conf.d/
 
