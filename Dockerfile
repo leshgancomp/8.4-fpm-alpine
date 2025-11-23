@@ -70,6 +70,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions &&  \
     rm -rf /var/cache/apk/*
 
 COPY --link docker/php/10-app.ini $PHP_INI_DIR/conf.d/
+COPY --link docker/php/20-app.prod.ini $PHP_INI_DIR/conf.d/
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
