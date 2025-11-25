@@ -85,7 +85,7 @@ WORKDIR /app
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 
-HEALTHCHECK --interval=5m --timeout=3s \
-  CMD SCRIPT_NAME=/ping SCRIPT_FILENAME=/ping REQUEST_METHOD=GET cgi-fcgi -connect 127.0.0.1:9000 || exit 1
+#HEALTHCHECK --interval=5m --timeout=3s \
+#  CMD SCRIPT_NAME=/ping SCRIPT_FILENAME=/ping REQUEST_METHOD=GET cgi-fcgi -connect 127.0.0.1:9000 || exit 1
 
 CMD ["php-fpm"]
