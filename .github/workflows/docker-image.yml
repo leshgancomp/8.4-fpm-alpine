@@ -59,7 +59,7 @@ jobs:
             type=ref,event=branch
             type=ref,event=pr
             type=ref,event=tag
-            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/latest' }}
+            type=raw,value=development,enable=${{ github.ref == 'refs/heads/development' }}
             type=schedule,pattern={{date 'YYYYMMDD'}}
           labels: |
             org.opencontainers.image.title=PHP 8.4 FPM Alpine Development
