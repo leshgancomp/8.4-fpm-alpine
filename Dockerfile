@@ -78,6 +78,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 COPY --from=mhart/alpine-node:10 /usr/bin/node /usr/bin/
 COPY --from=mhart/alpine-node:10 /usr/lib/libgcc* /usr/lib/libstdc* /usr/lib/
+COPY --from=mhart/alpine-node:10 /usr/lib/node_modules /usr/lib/node_modules
 
 # Switch to non-root user
 USER symfony
